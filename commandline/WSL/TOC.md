@@ -5,4 +5,6 @@
 # [Interoperability](./interop.md)
 # [Frequently Asked Questions](./faq.md)
 # [Troubleshooting](./troubleshooting.md)
+# Technical reference
+## [WSL architecture]()
 # [Release Notes](./release_notes.md)
