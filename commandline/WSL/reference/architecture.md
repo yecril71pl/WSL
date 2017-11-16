@@ -14,6 +14,8 @@ ms.assetid: e744587f-7450-4238-afd6-a36b2400bf24
 # Architecture
 
 This section documents the Windows Subsystem for Linux's underlying architecture.  It will touch on WSL's history, architecture, and core components.
+
+The refrence documentation here assumes deep understanding of operating system architecture.
  
 > Are you looking for a more general overview of WSL?  Read more [about WSL](../about.md).
 
@@ -46,16 +48,15 @@ WSL contains both user mode and kernel mode components. It is primarily comprise
 
 It is the space between the user mode Linux binaries and the Windows kernel components where the magic happens. By placing unmodified Linux binaries in Pico processes we enable Linux system calls to be directed into the Windows kernel. The lxss.sys and lxcore.sys drivers translate the Linux system calls into NT APIs and emulate the Linux kernel.
 
-
 ![WSL Components](media/wsl-components.png)
 
 ## LXSS Manager Service
 
-The LXSS Manager Service is a broker to the Linux subsystem driver and is the way Bash.exe invokes Linux binaries. The service is also used for synchronization around install and uninstall, allowing only one process to do those operations at a time and blocking Linux binaries from being launched while the operation is pending.
+The LXSS Manager Service is a broker to the Linux subsystem driver it also lets wsl.exe invoke Linux binaries. Basically, it synchronizes install/uninstall, manages Linux instances, and prevents Linux binaries from launching when WSL is in the process of installing or uninstalling.
 
 All Linux processes launched by a particular user go into a Linux instance. That instance is a data structure that keeps track of all LX processes, threads, and runtime state. The first time an NT process requests launching a Linux binary an instance is created.
 
-Once the last NT client closes, the Linux instance is terminated. This includes any processes that were launched inside of the instance including daemons (e.g. the git credential cache).
+Once the last NT client closes, the Linux instance is terminated. This includes processes that launched inside of the instance including daemons (e.g. the git credential cache).
 
 ## Pico Process
 As part of Project Drawbridge, the Windows kernel introduced the concept of Pico processes and Pico drivers. Pico processes are OS processes without the trappings of OS services associated with subystems like a Win32 Process Environment Block (PEB). Furthermore, for a Pico process, system calls and user mode exceptions are dispatched to a paired driver.
