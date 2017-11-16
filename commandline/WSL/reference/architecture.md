@@ -3,6 +3,7 @@ title: Windows Subsystem for Linux Architecture
 description: Detailed breakdown of the Windows Subsystem for Linux's architecture.
 keywords: wsl, windows, windowssubsystem
 author: scooley
+ms.author: scooley
 ms.date: 8/4/2017
 ms.topic: article
 ms.prod: windows-subsystem-for-linux
@@ -12,19 +13,17 @@ ms.assetid: e744587f-7450-4238-afd6-a36b2400bf24
 
 # Architecture
 
-Inevitably, in talking to people about WSL, the question "how is different from a virtual machine?" comes up.  This section in the documentation should answer that question in detail.
-
-We will touch on WSL's history, architecture, and core components.
+This section documents the Windows Subsystem for Linux's underlying architecture.  It will touch on WSL's history, architecture, and core components.
  
 > Are you looking for a more general overview of WSL?  Read more [about WSL](../about.md).
 
 
 ## History of Windows Subsystems
-Microsoft Windows NT was originally designed to support software written for a variety of platforms.  That allowed developers to run software on Windows without rewriting it even if it had been written for OS/2 or Unix environments.  
+Microsoft Windows NT was originally designed to support software written for a variety of platforms.  That allowed developers to run software on Windows without rewriting it, even if it had been written for OS/2 or Unix environments.
 
-One of the ways Windows NT did that was by running environment subsystems (like Win32 or POSIX) rather than asking developers to write software using kernel interfaces.  Each subsystem presented a different interface for applications to use without considering implementation details inside the kernel.
+One way Windows NT did that was by running environment subsystems (like Win32 or POSIX) rather than making developers write software using kernel interfaces.  Each subsystem presented a different interface for applications to use without considering implementation details inside the kernel.
 
-Windows NT 4.0, for example, has four environmental subsystems: viz Win32, DOS, OS/2, and POSIX.
+As an example, Windows NT 4.0 has four environmental subsystems: Win32, DOS, OS/2, and POSIX.
 
 Early subsystems were implemented as user mode modules that issued NT system calls based on the API they presented to applications for that subsystem. All applications were PE/COFF executables, a set of libraries and services to implement the subsystem API and NTDLL to perform the NT system call. When a user mode application launched, the loader invoked the right subsystem to satisfy the application dependencies based on the executable header.
 
@@ -34,9 +33,9 @@ Later versions of subsystems replaced the POSIX layer to provide the Subsystem f
 2. Terminal management
 3. System service requests and inter process communication
 
-The primary role of SUA was to encourage applications to get ported to Windows without significant rewrites. This was achieved by implementing the POSIX user mode APIs using NT constructs. Given that these components were constructed in user mode, it was difficult to have semantic and performance parity for kernel mode system calls like fork(). Because this model relied on the need for programs to be recompiled it required ongoing feature porting and was a maintenance burden.
+The primary role of SUA was to encourage applications to get ported to Windows without significant rewrites. This was achieved by implementing the POSIX user mode APIs using NT constructs. Given that these components were constructed in user mode, it was difficult to have semantic and performance parity for kernel mode system calls like fork(). This model required programs to be recompiled which meant continuous feature porting.  It was undenyably a maintenance burden.
 
-Over time these initial subsystems were retired. However, since the Windows NT Kernel was architected to allow new subsystem environments, we were able to use the initial investments made in this area and broaden them to develop the Windows Subsystem for Linux.
+Over time, those subsystems were retired. However, since the Windows NT Kernel was architected to allow new subsystem environments, we were able to use the initial investments made in this area to develop the Windows Subsystem for Linux.
 
 ## Windows Subsystem for Linux
 WSL contains both user mode and kernel mode components. It is primarily comprised of:
