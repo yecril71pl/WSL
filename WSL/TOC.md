@@ -4,6 +4,7 @@
 # [User account and permissions](./user-support.md)
 # [Multi-distro management](./wsl-config.md)
 # [Interoperability](./interop.md)
+# [Architecture Overview](architecture.md)
 # [Frequently Asked Questions](./faq.md)
 # [Troubleshooting](./troubleshooting.md)
 # [Release Notes](./release-notes.md)
