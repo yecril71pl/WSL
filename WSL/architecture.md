@@ -17,7 +17,7 @@ This section documents the Windows Subsystem for Linux's underlying architecture
 
 The refrence documentation here assumes deep understanding of operating system architecture.
  
-> Are you looking for a more general overview of WSL?  Read more [about WSL](../about.md).
+> Are you looking for a more general overview of WSL?  Read more [about WSL](about.md).
 
 
 ## History of Windows Subsystems
