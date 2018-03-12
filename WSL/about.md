@@ -13,7 +13,7 @@ ms.assetid: 3cefe0db-7616-4848-a2b6-9296746a178b
 
 # Windows Subsystem for Linux Documentation
 
-The Windows Subsystem for Linux lets developers run Linux environments -- including most command-line tools, utilities, and applications -- directly on Windows, unmodified, without the overhead of a virtual machine.  
+The Windows Subsystem for Linux lets developers run Linux environments -- including most command-line tools, utilities, and applications -- directly on Windows, unmodified, without the overhead of a virtual machine.
 
 You can:
 
