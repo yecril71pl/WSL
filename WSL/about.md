@@ -29,18 +29,14 @@ You can:
 ## Getting started
 
 * [Install Linux on Windows](install_guide.md)
-* [Visit the command reference](reference.md)
+* [Learn how to use Windows and Linux tools in WSL together](interop.md)
+* [Download and run multiple Linux distributions](wsl-config.md)
 * [Read frequently asked questions](faq.md)
+* [Checkout the release notes](release-notes.md)
 
 ## Team Blogs
-*  [Overview post with a collection of videos and blogs](https://blogs.msdn.microsoft.com/commandline/learn-about-windows-console-and-windows-subsystem-for-linux-wsl/)
 * [Command-Line blog](https://blogs.msdn.microsoft.com/commandline/)
 * [Windows Subsystem for Linux Blog](https://blogs.msdn.microsoft.com/wsl/)
-
-## Posts & Articles
-* [Run Bash on Ubuntu on Windows](https://blogs.windows.com/buildingapps/2016/03/30/run-bash-on-ubuntu-on-windows/)
-* [Developers Can Run Bash And Usermode Ubuntu Linux Binaries On Windows 10](http://www.hanselman.com/blog/DevelopersCanRunBashShellAndUsermodeUbuntuLinuxBinariesOnWindows10.aspx)
-* [Ubuntu on Windows – The Ubuntu Userspace for Windows Developers](http://insights.ubuntu.com/2016/03/30/ubuntu-on-windows-the-ubuntu-userspace-for-windows-developers/) 
 
 ## Provide Feedback
 * [GitHub issue tracker](https://github.com/Microsoft/BashOnWindows/issues)
