@@ -18,12 +18,11 @@ The Windows Subsystem for Linux lets developers run Linux environments -- includ
 You can:
 
 1. Choose your favorite Linux distributions [from the Windows Store](https://aka.ms/wslstore).
-1. Run common command-line utilities such as `grep`, `sed`, `awk`, etc. 
-1. Run Bash shell scripts and Linux command-line applications including:  
-    * Tools: vim, emacs, tmux
+1. Run scripts and Linux command-line applications available in your Linux distribution including:
+    * Tools: vim, emacs, tmux, grep, sed, awk, etc.
     * Languages: Javascript/node.js, Ruby, Python, C/C++, C# & F#, Rust, Go, etc.
     * Services: sshd, MySQL, Apache, lighttpd
-1. Install additional Linux tools using the distribution's built in package manager (`apt-get`, for example).
+1. Install Linux tools using the distribution's built in package manager (`apt-get`).
 1. Invoke Windows applications from the Linux console.
 1. Invoke Linux applications on Windows.
 
