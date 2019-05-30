@@ -24,7 +24,9 @@ To complete the initialization of your newly installed distro, launch a new inst
 
 The first time a newly installed distro runs, a Console window will open, and you'll be asked to wait for a minute or two for the installation to complete.
 
-> During this final stage of installation, the distro's files are de-compressed and stored on your PC, ready for use. This may take around a minute or more depending on the performance of your PC's storage devices. This initial installation phase is only required when a distro is clean-installed - all future launches should take less than a second.
+> During this final stage of installation, the distro's files are de-compressed and stored on your PC, ready for use.
+> This may take around a minute or more depending on the performance of your PC's storage devices.
+> This initial installation phase is only required when a distro is clean-installed or upgraded&mdash;all future launches should take less than a second.
 
 ## Setting up a new Linux user account
 
